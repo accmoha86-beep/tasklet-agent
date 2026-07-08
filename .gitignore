@@ -34,6 +34,7 @@ venv.bak/
 .DS_Store
 .env
 .env.local
+.env.infrastructure
 .env.*.local
 logs/
 *.log
@@ -43,3 +44,4 @@ htmlcov/
 node_modules/
 npm-debug.log
 Thumbs.db
+storage/
