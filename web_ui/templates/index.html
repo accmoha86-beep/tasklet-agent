@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasklet Agent - Web UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🤖 Tasklet Agent</h1>
+                <p class="subtitle">Intelligent AI Agent Framework</p>
+            </div>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Initializing...</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Task Input Section -->
+            <section class="task-section">
+                <h2>Execute Task</h2>
+                <div class="input-group">
+                    <textarea 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Enter your task here... (e.g., 'Create a Python script that reads a CSV file')"
+                        rows="3"
+                    ></textarea>
+                    <button id="executeBtn" class="btn btn-primary">Execute Task</button>
+                </div>
+                <div class="button-group">
+                    <button id="clearMemoryBtn" class="btn btn-secondary">Clear Memory</button>
+                    <button id="historyToggleBtn" class="btn btn-secondary">Show History</button>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Agent is working on your task...</p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <h2>Results</h2>
+                <div id="resultsContent" class="results-content"></div>
+            </section>
+
+            <!-- History Section -->
+            <section id="historySection" class="history-section hidden">
+                <h2>Execution History</h2>
+                <div id="historyContent" class="history-content"></div>
+            </section>
+
+            <!-- Memory Section -->
+            <section id="memorySection" class="memory-section hidden">
+                <h2>Agent Memory</h2>
+                <div id="memoryContent" class="memory-content"></div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Tasklet Agent. Built with ❤️ for intelligent automation.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
